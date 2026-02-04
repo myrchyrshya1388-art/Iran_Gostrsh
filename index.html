@@ -1,18 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="event.css">
-<link rel="icon" type="image/png" href="imgs/لوگو2.png">
-<title>طراحی سایت ایران گسترش</title>
-<style>
-  
-</style>
+  <meta charset="UTF-8">
+  <title>Iran Gostrsh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div id="welcome">Welcome to iran gostrsh</div>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<script src="nnnnn.js"></script>
+body {
+  font-family: sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  height: 100vh;
+}
+
+.loader-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: fadeIn 1.5s ease;
+}
+
+.logo span {
+  color: #00e5ff;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+.loader-bar {
+  width: 260px;
+  height: 6px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loader-progress {
+  width: 0%;
+  height: 100%;
+  background: #00e5ff;
+  animation: load 5s linear forwards;
+}
+
+.loading-text {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* انیمیشن‌ها */
+@keyframes load {
+  to { width: 100%; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ریسپانسیو */
+@media (max-width: 600px) {
+  .logo {
+    font-size: 1.7rem;
+  }
+}
+    </style>
+
+<div class="loader-page">
+  <div class="logo">
+    <span>&lt;</span> Iran Gostrsh <span>/&gt;</span>
+  </div>
+
+  <div class="tagline">
+    طراحی سایت حرفه‌ای
+  </div>
+
+  <div class="loader-bar">
+    <div class="loader-progress"></div>
+  </div>
+
+  <p class="loading-text">در حال آماده‌سازی وب‌سایت...</p>
+</div>
+
+<script>
+    setTimeout(() => {
+  window.location.href = "home.html"; // صفحه اصلی سایت
+}, 5000);
+</script>
 </body>
 </html>
