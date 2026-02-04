@@ -1,0 +1,427 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(180deg, #333333, #444444);
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+.blac{
+    background-color: aliceblue;
+    width: 200px;
+   height: 200px;
+   border-radius: 20px;   
+}
+
+.login-btn {
+    width: 200px;
+    height: 200px;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #ffffff, #fdffff);
+    color: #000;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* وقتی موس میره روش */
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(139, 139, 139);
+}
+
+/* وقتی کلیک میشه */
+.login-btn:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+.menu-btn {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* خود Drawer */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 320px;
+  max-width: 85%;
+  background: #0f172a;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+/* وقتی باز میشه */
+.drawer.active {
+  transform: translateX(0);
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+  .drawer {
+    width: 85%;
+  }
+
+  main,
+  .main,
+  .container {
+    margin: 0 !important;
+    transform: none !important;
+  }
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 260px;
+    height: 100%;
+    background: #666666;
+    padding: 24px 18px;
+    transition: 0.35s ease;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: -20px 0 40px rgba(0,0,0,0.15);
+}
+
+.drawer.active {
+    right: 0;
+}
+
+.drawer a {
+    padding: 14px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 15px;
+    background: #ffffff;
+    transition: 0.25s;
+}
+
+.drawer a:hover {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgb(255, 255, 255);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 150;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== Main ===== */
+.main {
+    padding: 18px;
+}
+
+.more-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 6px;
+    padding-right: 14px;
+    border-right: 2px solid #e5e7eb;
+}
+
+/* آیتم‌های زیرمنو */
+.more-list a {
+    display: block;
+    padding: 8px 0;
+    font-size: 13px;
+    color: #444;
+    text-decoration: none;
+}
+
+.more-list a:hover {
+    color: #14fdd6;
+}
+
+/* حالت باز */
+.more-list.open {
+    max-height: 300px; /* به اندازه آیتم‌ها */
+}
+
+.more-list.open + .arrow {
+    transform: rotate(90deg);
+}
+.drawer {
+    position: fixed;
+    z-index: 200; /* بالاتر از overlay */
+}
+
+.overlay {
+    position: fixed;
+    z-index: 100; /* پایین‌تر از drawer */
+}
+/* ===== Cart Page Layout ===== */
+.cart-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgb(255, 255, 255);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 150;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 900;
+}
+
+#overlay.active {
+  display: block;
+}
+
+.login-btn2 {
+    width: 200px;
+    height: 200px;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #00ff4c, #00f05c);
+    color: #000;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(1, 255, 35, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* وقتی موس میره روش */
+.login-btn2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(255, 255, 255);
+}
+
+/* وقتی کلیک میشه */
+.login-btn2:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+/* styles.css */:root{
+  --bg: #f8fafc;
+  --card: #05ebf3;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --today-bg: #e0f2fe;
+  --radius: 12px;
+}
+
+.calendar {
+  width: 400px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+  padding: 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.month {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.cell {
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  color: var(--muted);
+  background: transparent;
+  transition: background 200ms, transform 120ms;
+}
+
+.cell:hover {
+  background: rgba(37,99,235,0.08);
+  transform: translateY(-3px);
+}
+
+.cell.today {
+  background: var(--today-bg);
+  color: var(--accent);
+  font-weight: 700;
+}
+.event-dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.boloc{
+    width: 300px;
+    height: 250px;
+    background-color: #00f05c;
+
+}
+.boloc2{
+    width: 300px;
+    height: 250px;
+    background-color: #f1ff27;
+    
+}
+.boloc3{
+    width: 300px;
+    height: 400px;
+    background-color: #ff9100;
+    
+}
+
+.boloc5{
+    width: 700px;
+    height: 500px;
+    background-color: #1a1a1a;
+    color: #f1ff27;
+    border-radius: 30px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+html, body{
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+a, button{
+    touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+
+.row, .container, wrapper{
+    flex-direction: column !important;
+}
+
+h1 {font-size: 26px;}
+h2{font-size: 22px;}
+h3{font-size: 18px;}
+
+selection, div {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+}
+
+@media (max-width: 480px){
+    body{
+        font-size: 15px;
+    }
+
+    h1{font-size: 22px;}
+    h2{font-size: 19px;}
+}

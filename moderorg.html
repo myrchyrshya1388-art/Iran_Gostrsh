@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#f4f6f8;
+  --card:#fff;
+  --text:#111;
+  --accent:#2563eb;
+}
+body.dark{
+  --bg:#0b1220;
+  --card:#111827;
+  --text:#e5e7eb;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI}
+body{background:var(--bg);color:var(--text)}
+
+.center{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* LOGIN */
+.login{
+  background:var(--card);
+  padding:30px;
+  border-radius:14px;
+  width:320px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+.login h2{text-align:center;margin-bottom:20px}
+.login input{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
+.login button{
+  width:100%;
+  padding:10px;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* PANEL */
+.panel{display:none}
+.sidebar{
+  width:220px;
+  background:#0f172a;
+  color:#fff;
+  height:100vh;
+  padding:20px;
+  position:fixed;
+}
+.sidebar a{
+  display:block;
+  color:#cbd5e1;
+  margin:15px 0;
+  text-decoration:none;
+}
+.main{
+  margin-left:240px;
+  padding:20px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:14px;
+}
+.toggle{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.logout{
+  background:#ef4444;
+  margin-top:20px;
+}
+@media(max-width:768px){
+  .sidebar{display:none}
+  .main{margin:0}
+}
+
+.clock{
+  width:200px;
+  height:200px;
+  border:6px solid #2563eb;
+  border-radius:50%;
+  position:relative;
+  margin:20px auto;
+}
+
+.hand{
+  position:absolute;
+  width:50%;
+  height:2px;
+  background:#2563eb;
+  top:50%;
+  transform-origin:100%;
+  transform:rotate(90deg);
+}
+
+.hour{height:4px;width:35%}
+.minute{width:45%}
+.second{background:red}
+
+.center-dot{
+  width:12px;
+  height:12px;
+  background:#2563eb;
+  border-radius:50%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="center" id="loginPage">
+  <div class="login">
+    <h2>Login</h2>
+    <input id="user" placeholder="Username">
+    <input id="pass" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="panel" id="adminPanel">
+  <div class="sidebar">
+    <h3>Admin</h3>
+    <img style="width: 100%;border-radius: 50%; height: 300px;" src="imgs/modir.png">
+    <a href="home.html">Dashboard</a>
+    <a href="adminorg1.html">admins</a>
+    <a href="khandan2.html">Packages</a>
+    <button class="toggle" onclick="toggleTheme()">Dark / Light</button>
+    <button class="toggle logout" onclick="logout()">Logout</button>
+  </div>
+  <div class="main">
+    <h1>Admin Dashboard</h1>
+    <div class="card">
+  <h3>Date & Time</h3>
+  <p id="date"></p>
+  <h2 id="time"></h2>
+</div>
+<div class="card" style="text-align:center">
+  <h3>Clock</h3>
+  <div class="clock">
+    <div class="hand hour" id="hour"></div>
+    <div class="hand minute" id="minute"></div>
+    <div class="hand second" id="second"></div>
+    <div class="center-dot"></div>
+  </div>
+</div>
+    <div class="cards">
+      <div class="card">Total Users: 120</div>
+      <div class="card">Orders: 56</div>
+      <div class="card">Revenue: $8,200</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:30px">
+  <h3>Orders Analytics</h3>
+  <canvas id="ordersChart" height="120"></canvas>
+</div>
+</div>
+
+<!-- OPERATOR PANEL -->
+<div class="panel" id="operatorPanel">
+  <div class="sidebar">
+    <h3>Operator</h3>
+    <a href="#">Orders</a>
+    <a href="#">Support</a>
+    <button class="toggle" onclick="toggleTheme()">Dark / Light</button>
+    <button class="toggle logout" onclick="logout()">Logout</button>
+  </div>
+  <div class="main">
+    <h1>Operator Panel</h1>
+    <div class="cards">
+      <div class="card">Pending Orders: 12</div>
+      <div class="card">Messages: 4</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const users = {
+  admin:{pass:"1234",role:"admin"},
+  operator:{pass:"5678",role:"operator"}
+};
+
+function login(){
+  const u = user.value;
+  const p = pass.value;
+  if(users[u] && users[u].pass === p){
+    localStorage.setItem("role", users[u].role);
+    location.reload();
+  } else {
+    alert("Wrong login");
+  }
+}
+
+function logout(){
+  localStorage.clear();
+  location.reload();
+}
+
+function toggleTheme(){
+  document.body.classList.toggle("dark");
+}
+
+const role = localStorage.getItem("role");
+if(role){
+  loginPage.style.display="none";
+  if(role==="admin") adminPanel.style.display="block";
+  if(role==="operator") operatorPanel.style.display="block";
+}
+
+function updateTime(){
+  const now = new Date();
+
+  document.getElementById("time").innerHTML =
+    now.toLocaleTimeString();
+
+  document.getElementById("date").innerHTML =
+    now.toLocaleDateString('en-US', {
+      weekday:'long',
+      year:'numeric',
+      month:'long',
+      day:'numeric'
+    });
+}
+setInterval(updateTime,1000);
+updateTime();
+
+function setClock(){
+  const now = new Date();
+
+  const second = now.getSeconds() / 60 * 360;
+  const minute = (now.getMinutes() + now.getSeconds()/60) / 60 * 360;
+  const hour = (now.getHours() + now.getMinutes()/60) / 12 * 360;
+
+  document.getElementById("second").style.transform =`rotate(${second}deg)`;
+  document.getElementById("minute").style.transform = `rotate(${minute}deg)`;
+  document.getElementById("hour").style.transform = `rotate(${hour}deg)`;
+}
+setInterval(setClock,1000);
+setClock();
+
+</script>
+<script src="moder.js"></script>
+</body>
+</html>

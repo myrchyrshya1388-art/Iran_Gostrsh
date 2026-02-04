@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="darkhast.css">
+    <title>اکانت</title>
+</head>
+<body style="background-color: slategray;">
+     <div style="background-color: aliceblue;" class="checkout-box">
+    <from style=" border-radius: 30px;background-color: rgb(255, 255, 255); margin-left: auto; margin-right: auto;">
+        <fieldset>
+            <img style="width: 200px; height: 200px;border-radius: 100px; margin-right: 60px;" class="image" src="imgs/modir.png">
+            <form id="paymentForm" class="checkout-form">
+            <input type="text" id="fullname" placeholder="نام و نام خانوادگی" required>
+            <input type="tel" id="mobile" placeholder="شماره موبایل (11 رقم)" required>
+            <input type="text" id="nationalId" placeholder="کد ملی" required>
+
+            <select id="country" required>
+                <option value="">انتخاب کشور</option>
+                <option>ایران</option>
+                <option>ترکیه</option>
+                <option>امارات</option>
+                <option>آلمان</option>
+                <option>کانادا</option>
+                <option>آمریکا</option>
+            </select>
+            <select id="country" required>
+                <option value="">انتخاب نقش</option>
+                <option>مدیر</option>
+                <option>ادمین</option>
+                <option>کاربر</option>
+                <option>اشخاص منتخب</option>
+            </select>
+        </fieldset>
+        <a href="moderorg.html">
+            <button type="button" class="login-btn2">برگشت</button>
+        </a>
+    </from>
+    </div>
+</body>
+</html>

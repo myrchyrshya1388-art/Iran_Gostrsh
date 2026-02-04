@@ -1,0 +1,281 @@
+body{
+    background-color: #aaa;
+}
+.support-box {
+  width: 340px;
+  margin: 70px auto;
+  background: #111;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(0,0,0,.6);
+  color: #fff;
+  font-family: Vazirmatn, sans-serif;
+}
+
+.support-box h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.support-text {
+  font-size: 13px;
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.whatsapp-btn {
+  display: block;
+  background: #25D366;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.support-box label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.support-box input,
+.support-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.support-box textarea {
+  height: 80px;
+}
+
+.support-box button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.support-box button:hover {
+  opacity: .9;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  color: #00c6ff;
+  text-decoration: none;
+}
+.social-support {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.social-support {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.social-support a {
+  flex: 4;                 /* 🔴 مهم: هم‌اندازه شدن */
+  height: 48px;            /* ارتفاع یکسان */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  gap: 6px;
+}
+.whatsapp-btn {
+  background: #25D366;
+}
+
+.instagram-btn {
+  background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+}
+
+.telegram-btn {
+  background: #229ED9;
+}
+.eitaa-btn{
+    background-color: #f58529;
+}
+.admin-btn{
+    background-color: #0072ff;
+}
+
+.login-btn2 {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #5eff00, #7cfd62);
+    color: #000;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* وقتی موس میره روش */
+.login-btn2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(0, 255, 76);
+}
+
+/* وقتی کلیک میشه */
+.login-btn2:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+.login-btn3 {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #008cff, #00aeff);
+    color: #000;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 225, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* وقتی موس میره روش */
+.login-btn3:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(255, 238, 0);
+}
+
+/* وقتی کلیک میشه */
+.login-btn3:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+.login-btn4 {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #5eff00, #7cfd62);
+    color: #000;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 212, 28, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* وقتی موس میره روش */
+.login-btn4:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(217, 255, 0);
+}
+
+/* وقتی کلیک میشه */
+.login-btn4:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+.login-btn5 {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #ff3c00, #ffa600);
+    color: #000;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(255, 72, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* وقتی موس میره روش */
+.login-btn5:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(229, 255, 0);
+}
+
+/* وقتی کلیک میشه */
+.login-btn5:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}

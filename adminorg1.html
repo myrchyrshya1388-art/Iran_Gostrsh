@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="heelp.css">
+    <title>ادمین سایت</title>
+</head>
+<body style="background-color: cadetblue;">
+    <h1 style="color: yellowgreen; margin-right:700px ; font-size: 60px;">پنل ادمین</h1>
+    
+    <header class="header">
+        <h2>ادمین سایت</h2>
+
+ <div id="overlay" onclick="closeMenu()"></div>
+    <button class="menu-btn" onclick="openMenu()">☰</button>
+
+
+    </header>
+<aside class="drawer" id="drawer" onclick="event.stopPropagation()">
+  <a href="accont.html">
+  <button type="button" style="border-radius: 100px;"><img style="width: 200px; height: 200px;border-radius: 100px;" class="image" src="imgs/modir.png"></button>
+  </a>
+    <a href="accont.html" onclick="goToAccount()">👤اطلاعات کاربری</a>
+    <a href="support.html">💬 پشتیبانی</a>
+    <a href="cart.html">آمار بازدید</a>
+    <a href="settings.html">⚙تنظیمات</a>
+    <a href="moshaver.html">چک کردن حساب های کاربری</a>
+     <a href="moshaver.html">محصولات</a>
+     <a href="moshaver.html">ادمین های سایت</a>
+
+
+
+    <!-- سایر موارد -->
+    <div class="more-section">
+        <button class="more-btn" onclick="toggleMore()">
+            <span>سایر موارد</span>
+            <span class="arrow" id="more-arrow">▸</span>
+        </button>
+
+        <div class="more-list" id="more-list">
+            <a href="track.html">پیگیری سفارش</a>
+            <a href="tagherat.html">تغییرات قیمت</a>
+            <a href="save.html">نشان شده‌ها</a>
+            <a href="#">انتخاب شهر من</a>
+            <a href="irangostersh.html"> در باره ما</a>
+        </div>
+    </div>
+
+</aside>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<main class="main"></main>
+
+
+
+
+    
+     <a href="home.html">
+    <button style="width: 200px; height: 200px;" type="button" class="login-btn">باز دید سایت</button>
+    </a>
+
+    <a href="mahslolat.htm">
+    <button style="width: 700px; height: 200px;" type="button" class="login-btn">باز دید از محصولات</button>
+    </a>
+
+     <a href="event.html">
+    <button style="width: 700px; height: 200px;" type="button" class="login-btn">باز دید از محصولات سایت</button>
+    </a>
+    <br><br>
+    <table>
+        <td>
+            <tr>
+    <div style="border-radius: 30px;" class="boloc">
+     <h1>حساب مالی شرکت</h1>
+     <p>مبلغ افزایش یافته:10,000,000ریال</p>
+     <p>مبلغ افزایش یافته:15,000,000</p>
+     <h2>موجودی کل:25,000,000</h2>
+</tr>
+    </div>
+<tr>
+    <div style="border-radius: 20px;" class="boloc2">
+    <h1>تعداد ادمین ها</h1>
+    <p>ادمین فعال:2</p>
+    <p>ادمین غیرفعال:0</p>
+    <h2>تعداد ادمین ها:2</h2>
+</div>
+</tr>
+
+</td>
+</table>
+
+<div class="boloc3">
+    <h2>کارهای انجام شده</h2>
+    <p>پاسخگویی به مکالمات</p><input type="checkbox">
+    
+    <p>پاسخگویی به پیام ها </p>
+    <input type="checkbox">
+    <p>اضافه کردن محصولات</p>
+    <input type="checkbox">
+    <p>برسی حساب های مالی</p>
+    <input type="checkbox">
+    <p>برسی کارهای سایت و باگ یابی</p>
+    <input type="checkbox">
+   
+</div>
+
+     <br><br>
+<div class="calendar">
+  <div class="calendar-header">
+    <button id="prev"></button>
+    <div class="month" id="monthLabel"></div>
+    <button id="next"></button>
+  </div>
+  <div class="grid" id="calendarGrid"></div>
+</div>
+
+<script>
+const grid = document.getElementById('calendarGrid');
+const monthLabel = document.getElementById('monthLabel');
+
+let current = new Date();
+
+function render(date){
+  grid.innerHTML = '';
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  monthLabel.textContent = date.toLocaleString('default',{month:'long', year:'numeric'});
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  // weekdays header
+  const weekdays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  weekdays.forEach(w => {
+    const el = document.createElement('div');
+    el.className = 'cell';
+    el.style.fontWeight = '600';
+    el.textContent = w;
+    grid.appendChild(el);
+  });
+
+  // empty cells
+  for(let i=0;i<firstDay;i++){
+    const el = document.createElement('div');
+    el.className = 'cell';
+    grid.appendChild(el);
+  }
+
+  for(let d=1; d<=daysInMonth; d++){
+    const el = document.createElement('div');
+    el.className = 'cell';
+    el.textContent = d;
+    const today = new Date();
+    if(d === today.getDate() && month === today.getMonth() && year === today.getFullYear()){
+      el.classList.add('today');
+    }
+    grid.appendChild(el);
+  }
+}
+
+document.getElementById('prev').addEventListener('click', () => {
+  current.setMonth(current.getMonth() - 1);
+  render(current);
+});
+document.getElementById('next').addEventListener('click', () => {
+  current.setMonth(current.getMonth() + 1);
+  render(current);
+});
+
+render(current);
+</script>
+    
+    <script src="index.js"></script>
+    <a href="support2.html">
+    <button type="button" style="width: 100%;" class="login-btn2" onclick="alert('ادمین عزیز پس از تمام شدن کار لطفلا از طریق پام رسان به مدیر پیام بدهید')">تمام کردن کار امروز</button>
+    </a>
+</body>
+</html>

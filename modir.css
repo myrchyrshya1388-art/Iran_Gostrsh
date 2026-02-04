@@ -1,0 +1,160 @@
+body{
+    background-color: slategrey;
+}
+.login-btn{
+    width: 50%;
+    border-radius: 20%;
+    color: black;
+    background-color: burlywood;
+    font-size: 20px;
+
+}
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(0, 162, 255);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #111827;
+  direction: rtl;
+}
+
+/* باکس اصلی */
+.checkout-box {
+  max-width: 420px;
+  margin: 40px auto;
+  background: #00ffd5;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.checkout-box h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* فرم */
+.checkout-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.checkout-form input,
+.checkout-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.checkout-form input:focus,
+.checkout-form select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* دکمه */
+#continueBtn {
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#continueBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37,99,235,0.35);
+}
+
+#continueBtn:active {
+  transform: scale(0.97);
+}
+
+/* لینک بازگشت */
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* موبایل */
+@media (max-width: 480px) {
+  .checkout-box {
+    margin: 20px 12px;
+    padding: 18px;
+  }
+
+  #continueBtn {
+    font-size: 16px;
+}
+}
+
+.login-btn2{
+   width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #00d9ff, #00c3ff);
+    color: #000;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.6);
+    transition: all 0.3s ease;
+}
+.login-btn2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(208, 255, 0);
+}
+
+/* وقتی کلیک میشه */
+.login-btn2:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+.checkout-box2 {
+  max-width: 420px;
+  margin: 40px auto;
+  background: #686868;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}

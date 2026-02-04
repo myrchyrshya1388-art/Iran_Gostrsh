@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(71, 71, 71);
+}
+.font{
+    font-size: 40px;
+    color: black;
+
+}
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #5eff00, #7cfd62);
+    color: #000;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.6);
+    transition: all 0.3s ease;
+}
+
+/* وقتی موس میره روش */
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(0, 255, 76);
+}
+
+/* وقتی کلیک میشه */
+.login-btn:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+    

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ثبت سفارش موفق</title>
+  <link rel="stylesheet" href="style home.css">
+</head>
+<body>
+
+  <div class="success-page">
+    <div class="success-box">
+      <h2>🎉 سفارش شما با موفقیت ثبت شد</h2>
+
+      <p>کد پیگیری سفارش شما:</p>
+      <div style="font-size:22px;font-weight:bold;margin:10px 0;" id="trackingCode">
+        ---
+      </div>
+
+      <p style="font-size:14px;color:#555;">
+        لطفاً این کد را برای پیگیری سفارش نزد خود نگه دارید
+      </p>
+
+      <a href="track.html" class="back-home">پیگیری سفارش</a>
+      <a href="dashbord.html" class="back-home">برگشت به سایت</a>
+    </div>
+  </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const order = JSON.parse(localStorage.getItem("lastOrder"));
+  const el = document.getElementById("trackingCode");
+
+  if (!order || !order.trackingCode) {
+    el.innerText = "کد پیگیری یافت نشد";
+    return;
+  }
+
+  const date = new Date(order.createdAt);
+
+  const dateStr = date.toLocaleDateString("fa-IR");
+  const timeStr = date.toLocaleTimeString("fa-IR", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+  const dayStr = date.toLocaleDateString("fa-IR", { weekday: "long" });
+
+  el.innerHTML = `
+    ${order.trackingCode}
+    <div style="font-size:13px;margin-top:6px;color:#555">
+      ${dayStr} | ${dateStr} | ساعت ${timeStr}
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>

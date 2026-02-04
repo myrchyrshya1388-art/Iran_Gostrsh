@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>پیگیری سفارش</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background: #f3f4f6;
+      font-family: sans-serif;
+    }
+    .track-box {
+      max-width: 420px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .track-box h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .track-box input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .track-box button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: #2563eb;
+      color: #1a1919;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .track-result {
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #111827;
+    }
+    .error {
+      color: #dc2626;
+    }
+    ul {
+      padding-right: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="track-box">
+  <h2>📦 پیگیری سفارش</h2>
+
+  <input
+    type="text"
+    id="trackInput"
+    placeholder="کد پیگیری (مثال: ORD-123456)"
+  >
+
+  <button type="button" onclick="trackOrder()">بررسی وضعیت سفارش</button>
+
+  <div id="trackResult" class="track-result"></div>
+</div>
+
+<script>
+function trackOrder() {
+  const code = document.getElementById("trackInput").value.trim();
+  const result = document.getElementById("trackResult");
+
+  if (!code) {
+    result.innerHTML = "<div class='error'>❌ لطفاً کد پیگیری را وارد کنید</div>";
+    return;
+  }
+
+  // همه سفارش‌ها
+  const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+  // آخرین سفارش
+  const lastOrder = JSON.parse(localStorage.getItem("lastOrder"));
+
+  let order = orders.find(o => o.trackingCode === code);
+
+  // اگر داخل orders نبود، lastOrder را چک کن
+  if (!order && lastOrder && lastOrder.trackingCode === code) {
+    order = lastOrder;
+  }
+
+  if (!order) {
+    result.innerHTML = "<div class='error'>❌ سفارشی با این کد پیگیری یافت نشد</div>";
+    return;
+  }
+
+  // زمان
+  let dateStr = "-";
+let timeStr = "-";
+let dayStr  = "-";
+
+if (order.createdAt) {
+  const date = new Date(order.createdAt);
+
+  if (!isNaN(date)) {
+    dateStr = date.toLocaleDateString("fa-IR");
+    timeStr = date.toLocaleTimeString("fa-IR", {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+    dayStr = date.toLocaleDateString("fa-IR", { weekday: "long" });
+}
+}
+ 
+
+  // محصولات
+  let itemsHTML = "";
+  let items = order.items;
+
+  // اگر به‌اشتباه آیتم تکی بود
+  if (!Array.isArray(items)) {
+    items = [items];
+  }
+
+  items.forEach(item => {
+    itemsHTML += `<li>${item.name} × ${item.qty}</li>`;
+  });
+
+  result.innerHTML = `
+    <h3>📋 اطلاعات سفارش</h3>
+    <p><strong>کد پیگیری:</strong> ${order.trackingCode}</p>
+    <p><strong>وضعیت:</strong> ${order.status}</p>
+    <p><strong>تاریخ:</strong> ${dateStr}</p>
+    <p><strong>روز:</strong> ${dayStr}</p>
+    <p><strong>ساعت:</strong> ${timeStr}</p>
+    <hr>
+    <h4>🛒 محصولات سفارش:</h4>
+    <ul>${itemsHTML}</ul>
+  `;
+}
+</script>
+
+</body>
+</html>

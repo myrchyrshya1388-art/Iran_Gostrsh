@@ -1,0 +1,47 @@
+body{
+    background-color: #0072ff;
+}
+.profile-box {
+  width: 320px;
+  margin: 80px auto;
+  background: #111;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.5);
+  color: #fff;
+  font-family: Vazirmatn, sans-serif;
+}
+
+.profile-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-box label {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.profile-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.profile-box button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.profile-box button:hover {
+  opacity: .9;
+}

@@ -1,0 +1,78 @@
+body{
+    background-color: darkgrey;
+}
+.login-btn2{
+   width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #00d9ff, #00c3ff);
+    color: #000;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.6);
+    transition: all 0.3s ease;
+}
+.login-btn2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(255, 0, 0);
+}
+
+/* وقتی کلیک میشه */
+.login-btn2:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+.login-btn3{
+   width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #c8ff00, #eeff00);
+    color: #000;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(217, 255, 0, 0.6);
+    transition: all 0.3s ease;
+}
+.login-btn3:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(0, 255, 170);
+}
+
+/* وقتی کلیک میشه */
+.login-btn3:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}

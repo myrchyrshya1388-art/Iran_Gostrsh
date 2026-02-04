@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="darkhast.css">
+    <title>ساخن پروژه</title>
+     <link rel="icon" type="image/png" href="imgs/پاسخگویی .png">
+</head>
+<body>
+    <h1>دیر بجونبی سرت کلا میره ها همین حالا پروژه خودت رو بساز</h1>
+    <div class="checkout-box">
+     <form id="paymentForm" class="checkout-form">
+        <h2>لطفا مانند فرم زیر به درگاه ادمین و پیام رسان ها بفرستید با مشخصات دقیق</h2>
+            <input type="text" id="fullname" placeholder="نام و نام خانوادگی" required>
+            <input type="tel" id="mobile" placeholder="شماره موبایل (11 رقم)" required>
+            <input type="text" id="nationalId" placeholder="کد ملی" required>
+
+            <select id="country" required>
+                <option value="">انتخاب نوع پروژه</option>
+                <option>سایت</option>
+                <option>مشاوره قبل خرید</option>
+                <option>پشتیبانی سایت</option>
+                <option>آفیس</option>
+                <option>تایپ</option>
+            </select>
+
+            <select id="province" required>
+                <option value="">انتخاب زمان </option>
+                <option>2روز</option>
+                <option>3ورز</option>
+                <option>4روز</option>
+                <option>5روز</option>
+                <option>6روز</option>
+                <option>7روز</option>
+                <option>8روز</option>
+                <option>9روز</option>
+                <option>10روز</option>
+                <option>10روز به بالا</option>
+            </select>
+
+            <select id="province" required>
+                <option value="">انتخاب در خواست</option>
+                <option>سفارش</option>
+                <option>عضویت در تیم گستر</option>
+                <option>مشاوره</option>
+            </select>
+
+            <input type="text" id="city" placeholder="نام شهر" required>
+            <input type="text" id="address" placeholder="پلاک / آدرس" required>
+            <input type="text" id="text" placeholder="محصول خود را وارد کنید" required>
+
+            <button type="button" id="continueBtn" onclick="sendOrderToWhatsApp()">
+                ثبت درخواست
+            </button>
+
+
+        </form>
+    </div>
+    </div>
+
+    <a href="home.html" class="back-link">⬅️ بازگشت به فروشگاه</a>
+    <script src="darkhast.js"></script>
+</body>
+</html>

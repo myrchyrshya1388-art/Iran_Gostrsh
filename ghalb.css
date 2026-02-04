@@ -1,0 +1,349 @@
+.product-section {
+  margin: 20px 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  font-size: 16px;
+}
+
+.section-header a {
+  font-size: 13px;
+  color: #ff0000;
+  text-decoration: none;
+}
+
+/* grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* card */
+.product-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* image */
+.product-img {
+  position: relative;
+  text-align: center;
+}
+
+.product-img img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.camera-count {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: #555;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+/* title */
+.product-title {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+/* price */
+.product-price {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.product-price .toman {
+  font-size: 12px;
+  color: #555;
+}
+
+/* meta */
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #777;
+}
+
+.product-meta .icons i {
+  margin-right: 6px;
+  cursor: pointer;
+}
+.view-product-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 8px 0;
+  padding: 8px 0;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.view-product-btn:hover {
+  background: #1558b0;
+  transform: scale(0.98);
+}
+/* ===== Event Products Grid ===== */
+.event-section {
+  width: 100%;
+  padding: 20px;
+}
+
+.event-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* دسکتاپ: 3 کالا */
+  gap: 16px;
+}
+
+/* کارت محصول */
+.event-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+}
+
+.event-card img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.event-card h4 {
+  font-size: 14px;
+  color: #222;
+  margin: 6px 0;
+}
+
+.event-card .price {
+  font-size: 13px;
+  font-weight: bold;
+  color: #1a73e8;
+  margin-bottom: 8px;
+}
+
+/* دکمه */
+.event-card .view-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  background: #1a73e8;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .event-products {
+    grid-template-columns: repeat(2, 1fr); /* تبلت */
+  }
+}
+
+@media (max-width: 600px) {
+  .event-products {
+    grid-template-columns: 1fr; /* موبایل */
+  }
+}
+
+body {
+  background: linear-gradient(135deg, #011c46, #dfe6ef);
+}
+
+/* =========================
+   بخش محصولات / رویدادها
+========================= */
+.products,
+.events,
+.event-section,
+.roidad-section {
+  background: linear-gradient(180deg, #ffffff, #f4f7fb);
+  border-radius: 24px;
+  padding: 24px;
+  margin: 24px auto;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   کارت محصول (ظاهر فقط)
+========================= */
+.product-card,
+.event-card,
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 14px;
+  margin: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
+}
+
+.product-card:hover,
+.event-card:hover,
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+}
+
+/* =========================
+   عکس محصول
+========================= */
+.product-card img,
+.event-card img,
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background: #f6f8fc;
+  border-radius: 14px;
+  padding: 8px;
+}
+
+/* =========================
+   نام محصول
+========================= */
+.product-card h3,
+.product-card h4,
+.event-card h3,
+.event-card h4 {
+  font-size: 14px;
+  color: #222;
+  margin: 10px 0 6px;
+  text-align: center;
+}
+
+/* =========================
+   قیمت
+========================= */
+.price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0d6efd;
+  text-align: center;
+}
+
+
+/* =========================
+   دکمه مشاهده کالا
+========================= */
+.product-card a,
+.event-card a,
+.view-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  padding: 8px 0;
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
+  color: #fff !important;
+  border-radius: 12px;
+  font-size: 12px;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.product-card a:hover,
+.event-card a:hover {
+  background: linear-gradient(135deg, #0d47a1, #08306b);
+}
+
+/* =========================
+   SEARCH BAR – PROFESSIONAL
+========================= */
+
+/* فوکوس */
+.search-box:focus-within {
+  border-color: #1e88e5;
+  box-shadow: 0 0 0 3px rgba(30,136,229,0.15);
+}
+
+/* =========================
+   SEARCH RESULTS (DROPDOWN)
+========================= */
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  left: 0;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+  overflow: hidden;
+  z-index: 999;
+}
+
+/* هر آیتم نتیجه */
+.search-results .result-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.search-results .result-item:hover {
+  background: #f4f6f8;
+}
+
+/* عکس داخل نتیجه */
+.search-results .result-item img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f2f3f5;
+  padding: 4px;
+}
+
+/* متن نتیجه */
+.search-results .result-item span {
+  font-size: 13px;
+  color: #222;
+}
+
+/* =========================
+   MOBILE TUNING
+========================= */
+@media (max-width: 768px) {
+  .search-box {
+    padding: 6px 10px;
+    border-radius: 12px;
+  }
+
+  .search-box input {
+    font-size: 13px;
+  }
+}
