@@ -2,88 +2,32 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شرکت طراحی سایت ایران گسترش</title>
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="شرکت ایران گسترش ارائه دهنده طراحی سایت فروشگاهی، شرکتی، لندینگ و خدمات آنلاین با بهترین قیمت.">
+<meta name="keywords" content="طراحی سایت, فروشگاه آنلاین, سایت شرکتی, لندینگ, ایران گسترش">
+    <title>شرکت طراحی سایت |ایران گسترش</title>
 
     <link rel="stylesheet" href="style home.css">
      <link rel="icon" type="image/png" href="imgs/لوگو2.png">
 </head>
 <body>
 <!-- ===== Header ===== -->
-<header class="header"  <header id="hero">
-  <canvas id="codeCanvas"></canvas>
-  <div class="header-content">
-    <h1>Welcome to iran gostrsh</h1>
-    <p>iran gostrsh</p>
-
+ <header >
+ <img src="imgs/لوگو2.png" style="width: 100px; height: 100px;">
+   <h1>ایران گسترش مرجع تخصصی طراحی سایت</h1>
     <div class="search-box">
     <span class="search-icon"></span>
     <input
       type="text"
       id="searchInput"
       placeholder="serch..."
-      autocomplete="off"
-    >
+      autocomplete="off">
+    
+     
     <div id="searchResults" class="search-results"></div>
   </div>
 
-  </div>
-</header>
-
-<style>
- 
-</style>
-
-<script>
-  
-</script>
-<br><br><br>
-  <div id="overlay" onclick="closeMenu()"></div>
-    <button class="menu-btn" onclick="openMenu()">☰</button>
-  
-
-
-
-
-</header>
-
-<!-- ===== Drawer Menu ===== -->
-<aside class="drawer" id="drawer" onclick="event.stopPropagation()">
-
-    <a href="porofil.html" onclick="goToAccount()">👤اطلاعات کاربری</a>
-    <a href="support.html">💬 پشتیبانی</a>
-    <a href="moshaver.html">📱مشاوره قبل خرید</a>
-    
-
-
-    <!-- سایر موارد -->
-    <div class="more-section">
-        <button class="more-btn" onclick="toggleMore()">
-            <span>سایر موارد</span>
-            <span class="arrow" id="more-arrow">▸</span>
-        </button>
-
-        <div class="more-list" id="more-list">
-            <a href="track.html">پیگیری سفارش</a>
-            <a href="tagherat.html">تغییرات قیمت</a>
-            <a href="save.html">نشان شده‌ها</a>
-            <a href="#">انتخاب شهر من</a>
-            <a href="irangostersh.html"> در باره ما</a>
-        </div>
-    </div>
-
-</aside>
-
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-
-<!-- ===== Overlay ===== -->
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-
-<!-- ===== Main ===== -->
-<main class="main">
-
-    <!-- Categories -->
-    <section class="categories">
+   <section class="categories">
         <a href="darkhast.html">
         <button>ساخت پروژه</button>
         </a>
@@ -96,30 +40,266 @@
         <a href="call.html">
           <button>تماس با ما برای سفارش</button>
         </a>
-         <a href="khdmat.html">
-          <button>خدمات پس از فروش </button>
+    </section>
+</header>
+
+
+   <style>
+    
+        /* کانتینر آیکون شناور */
+        .whatsapp-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* پیام خوش آمدگویی */
+        .welcome-message {
+            position: absolute;
+            bottom: 70px; /* بالای آیکون */
+            right: 0;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s, transform 0.5s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* آیکون واتساپ */
+        .whatsapp-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            animation: bounce 1.5s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-icon img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* انیمیشن بالا و پایین */
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- کانتینر آیکون و پیام -->
+    <div class="whatsapp-container">
+        <div class="welcome-message" style="color: black;">من آنلاین هستم 📞 09022541277</div>
+        <a href="https://wa.me/982112345678" target="_blank" class="whatsapp-icon">
+            <img src="imgs/Whatsapp.jpg" alt="واتساپ">
         </a>
-         <a href="explore.html">
-          <button>آگهی ها </button>
-        </a>
-        
-    </section>  
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const message = document.querySelector('.welcome-message');
+
+            // بعد از 1 ثانیه پیام ظاهر شود
+            setTimeout(() => {
+                message.style.opacity = '1';
+                message.style.transform = 'translateY(0)';
+            }, 1000);
+
+            // بعد از 5 ثانیه محو شود
+            setTimeout(() => {
+                message.style.opacity = '0';
+                message.style.transform = 'translateY(10px)';
+            }, 6000);
+        });
+    </script>
+
+
+   
+
+
+
+
+    <div class="slider">
+  <div class="slides">
+    <img src="imgs/slider1.png" class="slide active">
+    <img src="imgs/slider2.gif" class="slide">
+    <img src="imgs/slider3.gif" class="slide">
+    <img src="imgs/slider4.gif" class="slide">
+    <img src="imgs/slider5.gif" class="slide">
+    <img src="imgs/slider6.gif" class="slide">
+  </div>
+
+  <button class="slider-btn prev">‹</button>
+  <br>
+  <button class="slider-btn next">›</button>
+
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
 </div>
 
-<video src=""></video>
-
-   <div class="product-card">
-
-  <!-- لینک صفحه محصول -->
-  <section class="products">
-
-    
 
 
-   </div>
 
+
+
+
+
+
+    </section> 
+    <section id="buttonContainer">
+     <button class="login-btn3">سایت کافی شاپ</button>
+     <button class="login-btn3">سایت لندینگ</button>
+     <button class="login-btn3">سایت فروشگاهی</button>
+     <button class="login-btn3">سایت های منو</button>
+     <button class="login-btn3">سایت خدمات</button>
+     <button class="login-btn3">سایت شرکتی</button>
+     </section>
+</div>
 </main>
-<div id="adBox" class="ad-box">
+
+
+
+<section id="fancySection">
+  <div class="fancy-box">
+    <h2>درباره ما</h2>
+    <p>در دنیای امروز، داشتن یک سایت حرفه‌ای دیگر یک انتخاب نیست، بلکه ضرورت هر کسب و کاری است. سایت‌های استاتیک ما، با طراحی مدرن و کاربرپسند، این امکان را به شما می‌دهند که بدون دردسر، حضور آنلاین قدرتمند و تاثیرگذار داشته باشید.
+با استفاده از تکنولوژی‌های به‌روز و بهینه، سایت شما سرعت بارگذاری فوق‌العاده‌ای خواهد داشت و تجربه کاربری بازدیدکننده را به بالاترین حد ممکن می‌رساند.
+فرقی نمی‌کند شما صاحب فروشگاه آنلاین، کافی‌شاپ، خدمات شرکتی یا سایت شخصی هستید؛ هر پروژه‌ای که سفارش دهید، با نهایت دقت و کیفیت اجرا می‌شود و تمام نیازهای شما را پوشش می‌دهد.
+مزایای سایت استاتیک ما:
+بارگذاری سریع و بدون هیچگونه لگ یا تاخیر
+طراحی واکنش‌ گرا و کاملاً ریسپانسیو روی موبایل و تبلت
+امنیت بالا، بدون نیاز به دیتابیس و نگرانی از هک شدن
+ساختار استاندارد و سئو-دوست، تا گوگل سایت شما را دوست داشته باشد
+پشتیبانی واقعی و پاسخگو، همیشه کنار شما هستیم
+با سایت‌های استاتیک ما، تجربه‌ای فراتر از طراحی ساده خواهید داشت؛ هر صفحه دقیقاً مانند یک اثر هنری دیجیتال، حرفه‌ای و جذاب است.
+تصور کنید وقتی مشتری وارد سایت شما می‌شود، همین نگاه اول به شما اعتماد می‌کند و حس می‌کند که کسب و کار شما واقعی، قدرتمند و حرفه‌ای است.
+همچنین، ما تمامی پروژه‌ها را با جدیدترین استانداردهای وب طراحی می‌کنیم، بدون افزونه‌های اضافی، بدون کدهای اضافی که سرعت سایت شما را کم کنند و بدون نیاز به سرور پیچیده یا دیتابیس سنگین.
+با سفارش سایت استاتیک حرفه‌ای ما، شما زمان و هزینه خود را بهینه می‌کنید، تجربه کاربران خود را بهبود می‌دهید و حضور آنلاین خود را به سطح بعدی می‌برید.
+همین حالا اقدام کنید و یک سایت استاتیک فوق حرفه‌ای برای کسب و کارتان داشته باشید، سایت‌هایی که نه تنها زیبا هستند، بلکه به‌طور هوشمندانه مخاطب شما را جذب می‌کنند، اعتماد ایجاد می‌کنند و فروش شما را افزایش می‌دهند.
+</p>
+    <button class="login-btn2">سفارش همین حالا</button>
+  </div>
+</section>
+
+
+
+
+
+ <div class="products-container">
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="imgs/forshgah.png">
+      </div>
+      <div class="flip-card-back">
+        <h3>نمونه کار1</h3>
+        <p>سایت فروشگاهی کامل اختصاصی کد نویسی شده 40صفحه ای </p>
+        <a href="https://myrchyrshya1388-art.github.io/Gostersenter/">
+        <button>بازدید</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="imgs/kafeh.png">
+      </div>
+      <div class="flip-card-back">
+        <h3>نمونه کار2</h3>
+        <p>سایت منو دار کافی شاپ حرفه ای موجود در شرکت</p>
+        <button>بازدید</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="imgs/forshgah.png">
+      </div>
+      <div class="flip-card-back">
+        <h3>محصول ۳</h3>
+        <p>توضیح کوتاه</p>
+        <button>بازدید</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<script>
+const slider = document.getElementById('slider');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.style.cursor = "grabbing";
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.style.cursor = "grab";
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.style.cursor = "grab";
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 2;
+  slider.scrollLeft = scrollLeft - walk;
+});
+</script>
+
+
+<script src="homee.js"></script>
+<script src="menu.js"></script>
+<script src="button.js"></script>
+<script src="slider.js"></script>
+
+<footer style="background-color: cadetblue; width: 100%; " class="site-footer">
+
+  <div class="footer-container">
+
+    <div id="adBox" class="ad-box">
   <span class="close-btn" onclick="closeAd()">×</span>
   <h3>🚀 همین حالا صاحب سایت شوید</h3>
   <p>طراحی سایت حرفه‌ای با پشتیبانی واقعی</p>
@@ -130,12 +310,6 @@ function closeAd() {
   document.getElementById("adBox").style.display = "none";
 }
 </script>
-
-<script src="homee.js"></script>
-
-<footer style="background-color: cadetblue; width: 100%; " class="site-footer">
-
-  <div class="footer-container">
 
     <!-- درباره ما -->
     <div class="footer-col">
@@ -186,7 +360,4 @@ function closeAd() {
 
 </footer>
 </body>
-
 </html>
-
-
