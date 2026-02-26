@@ -1,5 +1,5 @@
 body{
-    background: #464646 !important;
+    background: #ffffff !important;
 }
 
 :root {
@@ -26,12 +26,14 @@ body {
 }
 
 /* ===== Header ===== */
-.header {
+.header1 {
   width: 100%;
+  height: 400px;
     position: sticky;
     top: 0;
     z-index: 100;
-    background: linear-gradient(180deg, #ffffff, #f4f6f8);
+    background-image: url("imgs/لوگو2.png");
+    background-size: cover;
     padding: 16px;
     display: flex;
     justify-content: center;
@@ -49,6 +51,7 @@ body {
     border: none;
     color: var(--text);
     cursor: pointer;
+
 }
 
 /* ===== Search ===== */
@@ -91,7 +94,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    box-shadow: -20px 0 40px rgba(0,0,0,0.15);
+    box-shadow: -20px 0 40px rgba(251, 255, 0, 0.15);
 }
 
 .drawer.active {
@@ -138,8 +141,7 @@ body {
 
 /* دکمه‌ها */
 .categories button {
-    background-color: #00ffdd;   /* نارنجی */
-    color: #111;                 /* متن مشکی */
+    border-color: rgb(red, rgb(255, 119, 7), rgb(157, 255, 0));
     border: none;
     border-radius: 12px;
     padding: 12px 22px;
@@ -1432,20 +1434,29 @@ view-product-btn {
   position: relative;
 }
 
+/* نسبت تصویر استاندارد */
 .slides {
-  height: 300px;
   position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* مهم */
+  max-height: 500px;
 }
 
+/* هر اسلاید */
 .slide {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  background-color: #fff;
   opacity: 0;
   transition: opacity .6s ease;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* اگر نمیخوای برش بخوره بذار contain */
+  display: block;
 }
 
 .slide.active {
@@ -1457,7 +1468,7 @@ view-product-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,.45);
+  background: rgba(0,0,0,.0.3);
   color: #fff;
   border: none;
   width: 40px;
@@ -1465,11 +1476,17 @@ view-product-btn {
   border-radius: 50%;
   font-size: 22px;
   cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
 }
 
-.slider-btn.prev { left: 12px; }
-.slider-btn.next { right: 12px; }
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
 
+.slider-btn:hover{
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%);
+}
 /* dots */
 .dots {
   position: absolute;
@@ -1490,34 +1507,8 @@ view-product-btn {
 .dot.active {
   background: #2563eb;
 }
-.slider {
-  width: 100%;
-  max-width: 1200px;
-  margin: 20px auto;
-  border-radius: 18px;
-  overflow: hidden;
-  position: relative;
-  z-index: 2;
-}
 
-.slides {
-  height: 260px;
-  position: relative;
-}
 
-.slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity .6s ease;
-}
-
-.slide.active {
-  opacity: 1;
-}
 /* ===== Modern Search Box ===== */
 .search-box {
   position: relative;
@@ -1965,27 +1956,139 @@ header,
 
 /* دایره‌ها */
 .circle-item {
-  width: 110px;
+  width: 100px;
   height: 110px;
   border-radius: 50%;
-  border: none;
-  background: #222;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
+   padding: 4px; /* ضخامت دور رنگی */
+   background-image: url("imgs/لوگو2.png");
+   background-size: cover;
+  color: #000000;
+  font-size: 20px;
+  
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease, background 0.2s ease;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s;
 }
-
+.circle-item:img{
+ background: white; /* پس‌زمینه سفید */
+  object-fit: cover;
+  padding: 6px; /* فاصله سفید داخل دکمه */
+}
 /* هاور ساده */
 .circle-item:hover {
-  background: #00f0d0;
   transform: translateY(-4px);
+  filter: blur(5px);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+  .circle-item {
+    width: 90px;
+    height: 90px;
+    font-size: 13px;
+  }
+}
+
+
+.circle-item2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+   padding: 4px; /* ضخامت دور رنگی */
+   background-image: url("imgs/ravand.png");
+   background-size: cover;
+  color: #000000;
+  font-size: 20px;
+  font-family: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.circle-item2:img{
+ background: white; /* پس‌زمینه سفید */
+  object-fit: cover;
+  padding: 6px; /* فاصله سفید داخل دکمه */
+}
+/* هاور ساده */
+.circle-item2:hover {
+  transform: translateY(-4px);
+  filter: blur(5px);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+  .circle-item {
+    width: 90px;
+    height: 90px;
+    font-size: 13px;
+  }
+}
+
+.circle-item3 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+   padding: 4px; /* ضخامت دور رنگی */
+   background-image: url("imgs/sabsd.png");
+   background-size: cover;
+  color: #000000;
+  font-size: 20px;
+  font-family: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.circle-item3:img{
+ background: white; /* پس‌زمینه سفید */
+  object-fit: cover;
+  padding: 6px; /* فاصله سفید داخل دکمه */
+}
+/* هاور ساده */
+.circle-item3:hover {
+  transform: translateY(-4px);
+  filter: blur(5px);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+  .circle-item {
+    width: 90px;
+    height: 90px;
+    font-size: 13px;
+  }
+}
+
+.circle-item4 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+   padding: 4px; /* ضخامت دور رنگی */
+   background-image: url("imgs/video.jpg");
+   background-size: cover;
+  color: #000000;
+  font-size: 20px;
+  font-family: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.circle-item4:img{
+ background: white; /* پس‌زمینه سفید */
+  object-fit: cover;
+  padding: 6px; /* فاصله سفید داخل دکمه */
+}
+/* هاور ساده */
+.circle-item4:hover {
+  transform: translateY(-4px);
+  filter: blur(5px);
 }
 
 /* موبایل */
@@ -3020,6 +3123,244 @@ color:#111;
       align-items: center;
     }
   }
+.login-btn3 {
+    width: 100px;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: #000000;
+    backdrop-filter: blur(8px) ;
+    border: 1px 24px;
+    border-radius: 14px;
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* وقتی موس میره روش */
+.login-btn3:hover {
+    transform: translateY(-3px);
+}
+
+/* وقتی کلیک میشه */
+.login-btn:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+.story-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+
+#videoSection {
+  text-align: center;
+  padding: 20px;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  background-color: black;
+}
+
+video {
+  width: 100%;
+  height: 350px;
+  border-radius: 8px;
+}
+
+
+#fancySection {
+  padding: 20px;
+  text-align: center;
+}
+
+.fancy-box {
+  background-color: #f8f9fa;
+  border: 2px solid #007bff; /* رنگ حاشیه */
+  border-radius: 15px; /* گوشه‌های گرد */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* سایه */
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out; /* انیمیشن برای تغییرات */
+}
+
+.fancy-box:hover {
+  transform: scale(1.05); /* بزرگ‌تر شدن هنگام هاور */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* سایه قوی‌تر هنگام هاور */
+}
+
+.fancy-box h2 {
+  font-size: 1.8em;
+  color: #007bff; /* رنگ عنوان */
+  margin-bottom: 20px;
+}
+
+.fancy-box p {
+  font-size: 1.1em;
+  color: #333; /* رنگ متن */
+  line-height: 1.6;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px; /* فاصله از پایین صفحه */
+    right: 20px; /* فاصله از سمت راست صفحه */
+    width: 80px; /* اندازه آیکون */
+    height: 85px; /* اندازه آیکون */
+    background-color: #25D366; /* رنگ پس‌زمینه واتساپ */
+    border-radius: 50%; /* دایره شدن آیکون */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* سایه اطراف آیکون */
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.whatsapp-icon img {
+    width: 40px; /* اندازه آیکون در داخل دایره */
+    height: 40px; /* اندازه آیکون در داخل دایره */
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1); /* بزرگ شدن آیکون هنگام هاور */
+}
+
+/* انیمیشن بالا و پایین */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* حرکت به بالا */
+    }
+    100% {
+        transform: translateY(0); /* برگشت به موقعیت اولیه */
+    }
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: bounce 1.5s ease-in-out infinite; /* انیمیشن بالا و پایین */
+}
+
+.whatsapp-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(2.2); /* بزرگ شدن آیکون هنگام هاور */
+}
+
+
+.login-btn4{
+    width: 100px;
+    height: 150px;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: #000000;
+    backdrop-filter: blur(8px) ;
+    border: 1px 24px;
+    border-radius: 50%;
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* وقتی موس میره روش */
+.login-btn4:hover {
+    transform: translateY(-3px);
+}
+
+/* وقتی کلیک میشه */
+.login-btn:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+.login-btn2{
+   width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #ff0000, #ff0000);
+    color: #000;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(212, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+.login-btn2:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(0, 255, 242);
+}
+
+/* وقتی کلیک میشه */
+.login-btn2:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
 
 .ad-box {
   position: fixed;
@@ -3090,3 +3431,118 @@ color:#111;
     width: auto;
   }
 }
+
+
+.login-btn4{
+   width: 300px;
+   height: 350px;
+    padding: 14px;
+    margin-top: 15px;
+
+    background-image: url("imgs/forshgah.png");
+    background-size: cover;
+    color: #000;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(212, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+.login-btn4:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgb(0, 255, 242);
+}
+
+/* وقتی کلیک میشه */
+.login-btn4:active {
+    transform: scale(0.96);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .login-btn {
+        font-size: 15px;
+        padding: 13px;
+    }
+}
+
+
+/* ریلی بودن کانتینر */
+.products-container{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding:20px;
+  cursor:grab;
+}
+.products-container::-webkit-scrollbar{ display:none; }
+
+/* کارت چرخشی */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  flex-shrink:0; /* مهم برای ریلی بودن */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:active .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.flip-card-front img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-card-back{
+  background:#fff;
+  color:#333;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  transform: rotateY(180deg);
+  padding:20px;
+}
+
+.flip-card-back button{
+  padding:10px 20px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
+  background:#ff4d4d;
+  color:#fff;
+  cursor:pointer;
+}
+
+
+
