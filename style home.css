@@ -3544,5 +3544,77 @@ video {
   cursor:pointer;
 }
 
+  /* کانتینر آیکون شناور */
+        .whatsapp-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
 
+        /* پیام خوش آمدگویی */
+        .welcome-message {
+            position: absolute;
+            bottom: 70px; /* بالای آیکون */
+            right: 0;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s, transform 0.5s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
+        /* آیکون واتساپ */
+        .whatsapp-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            animation: bounce 1.5s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-icon img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* انیمیشن بالا و پایین */
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+.boloc{
+  width: 200px;
+  height: 200px;
+  background-color: yellowgreen;
+  font-size: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width:200px){
+  .boloc{
+    width: 150px/200px;
+    height: 200px;
+  }
+}
+
+.boloc:hover{
+   transform: translateY(0.3s);
+}
